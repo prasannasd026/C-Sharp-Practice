@@ -6,31 +6,51 @@ namespace C_Sharp_Practice
     {
         static void Main(string[] args)
         {
-            Animal myAnimal = new Animal("bob");
-            Animal myAnimal2 = new Animal("jennifer");
+            IAnimal myAnimal;
 
-            Console.WriteLine(myAnimal.Name);
-            Console.WriteLine(myAnimal2.Name);
+            Console.WriteLine("What animal are you?");
+            string input = Console.ReadLine();
 
-            Console.ReadLine();
+            if(input == "Dog")
+            {
+                myAnimal = new Dog();
+            }
+            else
+            {
+                myAnimal = new Animal();
+            }
+
+
+
+            myAnimal.Name = "Jessica ";
+            myAnimal.Breathe();
         }
     }
 
-    class Animal
+    class Animal : IAnimal
     {
-        public string Name { get; }
+        public string Name { get; set; }
+        public string Color { get; set; }
 
-        public Animal()
+        public void Breathe()
         {
-            Name = "No Name";
+            Console.WriteLine("I'm breathing");
         }
-
-        public Animal(string name)
+    }
+    class Dog : IAnimal
+    {
+        public string Name { get; set; }
+        public void Breathe()
         {
-            Name = name;
+            Console.WriteLine("I'm a Dog breathing");
         }
-
     }
 
+    interface IAnimal
+    {
+        string Name { get; set; }
+
+        void Breathe();
+    }
      
 }
