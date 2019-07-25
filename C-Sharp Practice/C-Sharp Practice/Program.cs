@@ -18,7 +18,7 @@ namespace C_Sharp_Practice
     {
         public string Name { get; set; }
 
-        public virtual void Breathe()
+        public void Breathe()
         {
             Console.WriteLine("I'm Breathing Air.");
         }
@@ -31,7 +31,7 @@ namespace C_Sharp_Practice
 
     class Fish : Animal
     {
-        public override void Breathe()
+        public new void Breathe()
         {
             Console.WriteLine("I'm breathing underwater");
         }
