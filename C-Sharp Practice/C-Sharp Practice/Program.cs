@@ -7,20 +7,18 @@ namespace C_Sharp_Practice
         static void Main(string[] args)
         {
             Dog myDog = new Dog();
-            myDog.Name = "Bob";
-            myDog.NumberOfLegs = 4;
             myDog.Bark();
+            myDog.Eat();
 
-            Lab myLab = new Lab();
-            myLab.Bark();
-            myLab.Name = "Lassie";
 
-            Console.WriteLine(myDog.Name);
-           
+            Fish myFish = new Fish();
+            myFish.Name = "Bob";
+            Console.WriteLine($"Hi I'am {myFish.Name}");
+            myFish.Breathe();
         }
     }
 
-    class Animal
+    abstract class Animal
     { 
         public string Name { get; set; }
         public string Color { get; set; }
@@ -31,7 +29,7 @@ namespace C_Sharp_Practice
         }
         public void Eat()
         {
-
+            Console.WriteLine("I'm Eating");
         }
     }
     class Dog : Animal
@@ -42,9 +40,9 @@ namespace C_Sharp_Practice
             Console.WriteLine("woof woof");
         }
     }
-    class Lab : Dog
+    class Fish : Animal
     {
-
+       
     }
        
     
