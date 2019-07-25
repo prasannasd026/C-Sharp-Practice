@@ -6,45 +6,23 @@ namespace C_Sharp_Practice
     {
         static void Main(string[] args)
         {
-            Dog myDog = new Dog();
-            myDog.Bark();
-            myDog.Eat();
-
-
-            Fish myFish = new Fish();
-            myFish.Name = "Bob";
-            Console.WriteLine($"Hi I'am {myFish.Name}");
-            myFish.Breathe();
+            Console.WriteLine(Math.Add(7, 14, 5));
         }
     }
 
-    abstract class Animal
-    { 
-        public string Name { get; set; }
-        public string Color { get; set; }
-
-        public void Breathe()
-        {
-            Console.WriteLine("I'm breathing");
-        }
-        public void Eat()
-        {
-            Console.WriteLine("I'm Eating");
-        }
-    }
-    class Dog : Animal
+    static class Math
     {
-        public int NumberOfLegs { get; set; }
-        public void Bark()
+        public static int Add(int a, int b)
         {
-            Console.WriteLine("woof woof");
+            return a + b;
+        }
+
+        public static int Add(int a , int b, int c)
+        {
+            return a + b + c;
         }
     }
-    class Fish : Animal
-    {
-       
-    }
-       
+
     
 
 }
